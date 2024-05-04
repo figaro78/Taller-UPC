@@ -1,3 +1,50 @@
+##ejemplp 1######
+
+# Creamos una lista de palabras
+palabras = ["perro", "gato", "elefante", "loro", "tigre"]
+
+# Ordenamos la lista alfabéticamente
+palabras.sort()
+
+# Mostramos la lista ordenada
+print("Lista de palabras ordenadas alfabéticamente:")
+for palabra in palabras:
+    print(palabra)
+######## ejemplo 2#####
+
+def encontrar_primos(n):
+    """
+    Encuentra todos los números primos hasta n utilizando la criba de Eratóstenes.
+    """
+    # Creamos una lista para marcar los números compuestos
+    compuestos = [False] * (n+1)
+    # Creamos una lista para almacenar los números primos encontrados
+    primos = []
+    
+    # Empezamos desde 2, que es el primer número primo
+    for i in range(2, n+1):
+        if not compuestos[i]:
+            primos.append(i)
+            # Marcamos los múltiplos de i como compuestos
+            for j in range(i*i, n+1, i):
+                compuestos[j] = True
+                
+    return primos
+
+# Pedimos al usuario que ingrese un número
+numero = int(input("Ingrese un número entero positivo: "))
+
+# Encontramos los números primos hasta el número dado
+primos = encontrar_primos(numero)
+
+# Imprimimos la lista de números primos
+print("Números primos hasta", numero, ":")
+print(primos)
+
+
+###############################
+
+
 1.- Condicionales
 
 Ejercicio1
